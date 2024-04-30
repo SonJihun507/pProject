@@ -9,14 +9,15 @@
 </head>
 <body>
     <script src="./movie.js"></script>
+    
     <header class="title">영화 검색</header>
     
     <div class="nav"> 
-        
-        <input type="text" class = "search-text"/>
-        <button id="btn">
-            검색
-        </button>
+        <form id="search-form">
+            <label>영화 검색 : </label>
+            <input type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
+            <button type="submit" id="search-btn">검색</button>
+        </form>
     </div>
     
     

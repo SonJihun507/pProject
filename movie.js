@@ -47,14 +47,45 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       document.getElementById('movies_list').appendChild(newCard)
 
      
+      function alert_movie_id() {
+        window.alert("영화ID: " + element.id);
+      }
+      
+      const searchInput = document.querySelector("#search-input");
+      searchInput.focus();
+      
+      const movieCards = document.querySelectorAll(".movie_list");
 
+      movieCards.forEach((section_card) => {
+        const title = section_card.querySelector(".card_title").textContent.toLowerCase();
+          if (title.includes(searchKeyword)) {
+          section_card.style.display = "block";
+            } else {
+              section_card.style.display = "none"; 
+            
+          }
+                
+       
+      });
+      // const search_movie = async event => {
+      //   const search_text = document.getElementsByClassName("search-text")[0];
+      //   const search_keyword = search_text.value.toUpperCase();
+    
+      //   const search_movie_list = movie_list.filter(
+      //      ({title}) => title.toUpperCase().includes(search_keyword)
+      //     );
+    
+      //     search_movie_list.length > 0
+      //       ? movie_list(search_movie_list)
+      //       : alert("검색 결과가 없습니다.");
+      //     ;
+    
+      //   } 
+        
       
 
     });
-    function alert_movie_id() {
-      window.alert("영화ID: " + element.id);
-    }
-    //검색시스템 구현 실패
+    
     
   })
 
@@ -65,3 +96,4 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
 
 
 
+ 
